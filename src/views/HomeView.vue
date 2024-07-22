@@ -6,7 +6,7 @@
       <div class="chat-container">
         <ul class="messages">
           <li v-for="message in messages" :key="message.id" :class="{'my-message': message.userId === getCurrentUserId}">
-             {{ message.content }}
+            {{ message.content }}
           </li>
         </ul>
         <div class="input-container">
@@ -58,6 +58,8 @@ body, ul, li {
   list-style: none;
   box-sizing: border-box;
   font-family: Arial, sans-serif;
+  background: #D9D9D9;
+
 }
 /* General body styling */
 body {
@@ -96,7 +98,7 @@ body {
   flex-direction: column;
   height: 400px;
   max-height: 70vh;
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
   border-radius: 8px;
   overflow: hidden;
 }
@@ -106,6 +108,7 @@ body {
   overflow-y: auto;
   padding: 15px;
   background: #D9D9D9;
+  box-shadow: inset -1px -1px 3px 1.5px gray;
 }
 /* Individual message styling */
 .messages li {
@@ -121,7 +124,7 @@ body {
   text-align: right;
 }
 .received {
-  background: #F1F1F1; /* Light gray background for received messages */
+  background: #a9a9a9; /* Light gray background for received messages */
   align-self: flex-start;
   text-align: left;
 }
