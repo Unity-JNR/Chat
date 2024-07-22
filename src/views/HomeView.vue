@@ -1,12 +1,11 @@
 <template>
   <body>
-  
     <div id="app">
       <p class="user-id">User ID: {{ getCurrentUserId }}</p>
       <div class="chat-container">
         <ul class="messages">
           <li v-for="message in messages" :key="message.id" :class="{'my-message': message.userId === getCurrentUserId}">
-            {{ message.content }}
+            {{ message.userId }}: {{ message.content }}
           </li>
         </ul>
         <div class="input-container">
