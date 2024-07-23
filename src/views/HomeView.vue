@@ -118,12 +118,12 @@ body {
   word-wrap: break-word;
 }
 .my-message {
-  background: #DCF8C6; /* Light green background for sent messages */
+  background: #b6ff7f; /* Light green background for sent messages */
   align-self: flex-end;
-  text-align: right;
+  /* text-align: right; */
 }
 .received {
-  background: #a9a9a9; /* Light gray background for received messages */
+  background: #fff8f8; /* Light gray background for received messages */
   align-self: flex-start;
   text-align: left;
 }
