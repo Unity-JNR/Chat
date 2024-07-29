@@ -65,15 +65,15 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 85vh;
+  height: 95vh;
 }
 /* Container for the chat app */
 #app {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 90%;
-  max-width: 500px;
+  width: 100%;
+  max-width: 600px;
   background: #fff;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
@@ -107,7 +107,7 @@ body {
   overflow-y: auto;
   padding: 15px;
   background: #D9D9D9;
-  box-shadow: inset -1px -1px 3px 1.5px gray;
+  /* box-shadow: inset -1px -1px 3px 1.5px gray; */
 }
 /* Individual message styling */
 .messages li {
@@ -118,9 +118,9 @@ body {
   word-wrap: break-word;
 }
 .my-message {
-  background: #b6ff7f; /* Light green background for sent messages */
+  background: #85f62f; /* Light green background for sent messages */
   align-self: flex-end;
-  /* text-align: right; */
+  text-align: left;
 }
 .received {
   background: #fff8f8; /* Light gray background for received messages */
