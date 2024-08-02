@@ -84,7 +84,7 @@ body {
 .user-id {
   margin-bottom: 15px;
   padding: 10px;
-  /* background: #007BFF; */
+  background: #dbecff;
   color: #000000;
   text-align: center;
   font-weight: bold;
@@ -97,7 +97,7 @@ body {
   flex-direction: column;
   height: 400px;
   max-height: 70vh;
-  border: 1px solid #cccccc;
+  border: 1px solid #848484;
   border-radius: 8px;
   overflow: hidden;
 }
@@ -142,6 +142,7 @@ body {
   border-radius: 4px;
   outline: none;
   font-size: 16px;
+  
 }
 /* Button styling */
 .send-button {
