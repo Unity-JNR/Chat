@@ -14,8 +14,8 @@ export default createStore({
     ADD_MESSAGE(state, message) {
       state.messages.push(message);
     },
-    CLEAR_MESSAGES(state) {
-      state.messages.splice(0, state.messages.length);
+    SET_MESSAGES(state, messages) {
+      state.messages = messages;
     },
     SET_CURRENT_USER_ID(state, id) {
       state.currentUserId = id;
@@ -30,9 +30,15 @@ export default createStore({
           withCredentials: true,
         });
         commit('SET_SOCKET', socket);
+
         socket.on('userId', (id) => {
           commit('SET_CURRENT_USER_ID', id);
         });
+
+        socket.on('previous messages', (messages) => {
+          commit('SET_MESSAGES', messages);
+        });
+
         socket.on('chat message', (message) => {
           commit('ADD_MESSAGE', message);
         });
@@ -43,10 +49,10 @@ export default createStore({
         state.socket.emit('chat message', message);
       }
     },
-    fetchMessagesFromServer({ state }) {
+    fetchMessagesFromServer({ commit, state }) {
       if (state.socket) {
         state.socket.on('chat message', (message) => {
-          state.commit('ADD_MESSAGE', message);
+          commit('ADD_MESSAGE', message);
         });
       }
     },
