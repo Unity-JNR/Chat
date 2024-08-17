@@ -1,18 +1,21 @@
 <template>
-  <div id="app">
-    <p class="user-id">User ID: {{ getCurrentUserId }}</p>
-    <div class="chat-container">
-      <ul class="messages">
-        <li v-for="(message, index) in messages" :key="index" :class="{'my-message': message.user_id === getCurrentUserId}">
-          {{ message.user_id }}: {{ message.content }}
-        </li>
-      </ul>
-      <div class="input-container">
-        <input v-model="newMessage" @keyup.enter="handleSendMessage" placeholder="Type a message" class="chat-input" />
-        <button @click="handleSendMessage" class="send-button">Send</button>
+  <body>
+    <div id="app">
+      <p class="user-id">User ID: {{ getCurrentUserId }}</p>
+      <div class="chat-container">
+        <ul class="messages">
+          <li v-for="message in messages" :key="message.id" :class="{'my-message': message.userId === getCurrentUserId}">
+            {{ message.userId }}: {{ message.content }}
+          </li>
+        </ul>
+        <div class="input-container">
+          <input v-model="newMessage" @keyup.enter="handleSendMessage" placeholder="Type a message" class="chat-input" />
+          <button @click="handleSendMessage" class="send-button">Send</button>
+        </div>
       </div>
     </div>
-  </div>
+  </body>
+  
 </template>
 
 <script>
@@ -34,7 +37,7 @@ export default {
     ...mapActions(['initSocket', 'sendMessageToServer']),
     handleSendMessage() {
       if (this.newMessage.trim()) {
-        const msg = { content: this.newMessage, user_id: this.getCurrentUserId };
+        const msg = { content: this.newMessage, userId: this.getCurrentUserId };
         this.sendMessageToServer(msg);
         this.newMessage = ''; // Reset the input field
       }
