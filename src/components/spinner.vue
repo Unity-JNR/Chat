@@ -19,7 +19,7 @@
             </div>
         </div>
     </div>
-    MADE BY UNITY DEMAS 
+      <p> MADE BY UNITY DEMAS </p>  
 </div>
 </template>
 
