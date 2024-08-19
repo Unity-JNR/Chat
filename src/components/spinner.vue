@@ -18,9 +18,8 @@
                 <div class="inner">ChatOrBit</div>
             </div>
         </div>
-        <p> MADE BY UNITY DEMAS </p>  
+      </div>
     </div>
-</div>
 </template>
 
 <script>
